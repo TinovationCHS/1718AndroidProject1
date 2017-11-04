@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "612297529392",
+    "firebase_url": "https://tinovationproject.firebaseio.com",
+    "project_id": "tinovationproject",
+    "storage_bucket": "tinovationproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612297529392:android:11cb8d25fe2c383a",
+        "android_client_info": {
+          "package_name": "com.example.anjanbharadwaj.tinovationandroidapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612297529392-7inmgdbt2ft239r5dvg71r9u7n84gdlj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.anjanbharadwaj.tinovationandroidapp",
+            "certificate_hash": "63380f37a08568dadd1a6b1f76b9da1f35d7ec51"
+          }
+        },
+        {
+          "client_id": "612297529392-l0b2p55jk79cd20pfqnq20695p7i4hd5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOB_B1FloVK-L-Jvdtz8IHoY3bGJ83qXo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612297529392-l0b2p55jk79cd20pfqnq20695p7i4hd5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

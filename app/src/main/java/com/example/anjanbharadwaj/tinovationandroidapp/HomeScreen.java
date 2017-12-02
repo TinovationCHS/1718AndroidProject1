@@ -3,6 +3,7 @@ package com.example.anjanbharadwaj.tinovationandroidapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -19,9 +20,7 @@ import java.util.Set;
 
 public class HomeScreen extends AppCompatActivity {
     public static ArrayAdapter<String> arrayAdapter;
-    public static ArrayList<String> classhomework = new ArrayList<>();
-    public static ArrayAdapter<String> arrayAdapter2;
-    public static ArrayList<String> classnotes = new ArrayList<>();
+    public static ArrayList<String> notes = new ArrayList<>();
     ListView v;
 
     DatabaseReference root = FirebaseDatabase.getInstance().getReference();
@@ -29,24 +28,24 @@ public class HomeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-        v = (ListView)findViewById();
-        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, classhomework);
-        arrayAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, classnotes);
-        //arrayAdapter = new MyCustomAdapter(classhomework, this);
-        listviewhw.setAdapter(arrayAdapter);
-        listofnote.setAdapter(arrayAdapter2);
+        v = (ListView)findViewById(R.id.listview);
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, notes);
+        v.setAdapter(arrayAdapter);
 
+
+        //OLD DATABASE CODE
         root.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Iterator i = dataSnapshot.getChildren().iterator();
+                notes.clear();
                 while(i.hasNext()){
-                    //create arraylist here 11/18 meeting
                     String key = (((DataSnapshot) i.next()).getKey());
                     String value = ((dataSnapshot).child(key).getValue().toString());
                     System.out.println((key+" has a value of  "+value));
+                    notes.add(key + ": " + value);
                 }
-
+                arrayAdapter.notifyDataSetChanged();
 
             }
 
@@ -55,5 +54,9 @@ public class HomeScreen extends AppCompatActivity {
 
             }
         });
+
+        //NEW DATABASE CODE SHOULD BE SORTED INTO CLASSES
+        //WHEN YOU  TAP ON SOMETHING, IT SHOULD CLEAR THE LISTVIEW AND REPOPULATE IT WITH NEW DATA FROM INSIDE THAT CLASS
+
     }
 }

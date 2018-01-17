@@ -33,8 +33,9 @@ public class HomeScreen extends AppCompatActivity {
         v.setAdapter(arrayAdapter);
 
 
+
         //OLD DATABASE CODE
-        root.addListenerForSingleValueEvent(new ValueEventListener() {
+        root.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Iterator i = dataSnapshot.getChildren().iterator();

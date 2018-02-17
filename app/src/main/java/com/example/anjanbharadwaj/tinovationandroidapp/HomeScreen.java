@@ -22,13 +22,16 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class HomeScreen extends AppCompatActivity {
-//    public static ArrayAdapter<String> arrayAdapter;
-//    public static ArrayList<String> notes = new ArrayList<>();
+
+    //    public static ArrayAdapter<String> arrayAdapter;
+    //    public static ArrayList<String> notes = new ArrayList<>();
     public static ArrayAdapter<String> arrayAdapter2;
     public static ArrayList<String> classes = new ArrayList<>();
     //ListView v;
     ListView v2;
     DatabaseReference root = FirebaseDatabase.getInstance().getReference();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +60,7 @@ public class HomeScreen extends AppCompatActivity {
 
             }
         });
+
         v2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parentView, View childView, int position, long id) {
                 String className = v2.getItemAtPosition(position).toString();
@@ -66,8 +70,8 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
+
         //NEW DATABASE CODE SHOULD BE SORTED INTO CLASSES
         //WHEN YOU  TAP ON SOMETHING, IT SHOULD CLEAR THE LISTVIEW AND REPOPULATE IT WITH NEW DATA FROM INSIDE THAT CLASS
-
     }
 }

@@ -19,7 +19,10 @@
         <activity android:name=".HomeScreen" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".NoteDetailActivity" />
-        <activity android:name=".ClassDetailActivity"></activity>
+        <activity android:name=".ClassDetailActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".CommentsActivity" />
+        <activity android:name=".AddClassActivity"></activity>
     </application>
 
 </manifest>

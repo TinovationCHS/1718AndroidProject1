@@ -26,7 +26,6 @@ public class ClassDetailActivity extends AppCompatActivity {
         listener = new RecyclerViewClickListener() {
             @Override
             public void onClick(View view, int position) {
-
                 String className = "Hi";
                 //Create an Intent to the BookDetail Activity, and pass in the info about the specific Book that was clicked
                 Intent i = new Intent(getApplicationContext(), NoteDetailActivity.class);

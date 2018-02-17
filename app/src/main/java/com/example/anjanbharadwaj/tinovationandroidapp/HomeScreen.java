@@ -37,6 +37,7 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
         //v = (ListView)findViewById(R.id.listview);
+        startActivity(new Intent(getApplicationContext(), AddClassActivity.class));
         v2 = (ListView)findViewById(R.id.listview2);
         arrayAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, classes);
         v2.setAdapter(arrayAdapter2);

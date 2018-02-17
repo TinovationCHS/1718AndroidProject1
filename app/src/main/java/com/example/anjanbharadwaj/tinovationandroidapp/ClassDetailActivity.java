@@ -56,7 +56,6 @@ class BookViewHolder extends RecyclerView.ViewHolder implements View.OnClickList
         //instantiation of views
         cardView = (CardView)       v.findViewById(R.id.cardView);
         description = (TextView)    v.findViewById(R.id.bookDescription);
-        ratingBar = (RatingBar)     v.findViewById(R.id.ratingBar);
         bookImage = (ImageView)     v.findViewById(R.id.bookImageView);
 
         this.mListener = mListener;

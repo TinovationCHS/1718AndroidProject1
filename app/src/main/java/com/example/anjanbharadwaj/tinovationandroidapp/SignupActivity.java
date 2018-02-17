@@ -42,8 +42,8 @@ public class SignupActivity extends AppCompatActivity {
                 String email1 = email.getText().toString();
                 String password1 = password.getText().toString();
                 final String name1 = name.getText().toString();
-                final String id1 = name.getText().toString();
-                final String grade1 = name.getText().toString();
+                final String id1 = id.getText().toString();
+                final String grade1 = grade.getText().toString();
                 if(!name1.isEmpty() && !id1.isEmpty() && !grade1.isEmpty()) {
                     mAuth.createUserWithEmailAndPassword(email1, password1)
                             .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
@@ -65,7 +65,6 @@ public class SignupActivity extends AppCompatActivity {
                                                 Toast.LENGTH_SHORT).show();
                                     }
 
-                                    // ...
                                 }
                             });
                 }

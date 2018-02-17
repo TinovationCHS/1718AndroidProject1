@@ -23,10 +23,10 @@ public class ClassDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_detail);
-
         listener = new RecyclerViewClickListener() {
             @Override
             public void onClick(View view, int position) {
+
                 String className = "Hi";
                 //Create an Intent to the BookDetail Activity, and pass in the info about the specific Book that was clicked
                 Intent i = new Intent(getApplicationContext(), NoteDetailActivity.class);
@@ -43,10 +43,7 @@ public class ClassDetailActivity extends AppCompatActivity {
 class BookViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     CardView cardView;
-    TextView title;
-    TextView author;
     TextView description;
-    RatingBar ratingBar;
     ImageView bookImage;
 
     private RecyclerViewClickListener mListener;
@@ -56,7 +53,6 @@ class BookViewHolder extends RecyclerView.ViewHolder implements View.OnClickList
         //instantiation of views
         cardView = (CardView)       v.findViewById(R.id.cardView);
         description = (TextView)    v.findViewById(R.id.bookDescription);
-        ratingBar = (RatingBar)     v.findViewById(R.id.ratingBar);
         bookImage = (ImageView)     v.findViewById(R.id.bookImageView);
 
         this.mListener = mListener;

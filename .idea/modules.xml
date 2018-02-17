@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/2018_Tinovation.iml" filepath="$PROJECT_DIR$/2018_Tinovation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tinovation.iml" filepath="$PROJECT_DIR$/Tinovation.iml" />
       <module fileurl="file://$PROJECT_DIR$/TinovationAndroidApp.iml" filepath="$PROJECT_DIR$/TinovationAndroidApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

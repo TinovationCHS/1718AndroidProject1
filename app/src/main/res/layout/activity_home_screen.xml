@@ -7,6 +7,11 @@
     tools:context="com.example.anjanbharadwaj.tinovationandroidapp.HomeScreen">
 
     <ListView
+        android:id="@+id/listview2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

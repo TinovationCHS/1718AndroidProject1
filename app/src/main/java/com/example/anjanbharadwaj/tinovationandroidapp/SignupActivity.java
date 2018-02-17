@@ -13,6 +13,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity {
     EditText email;
@@ -39,25 +41,34 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email1 = email.getText().toString();
                 String password1 = password.getText().toString();
+                final String name1 = name.getText().toString();
+                final String id1 = name.getText().toString();
+                final String grade1 = name.getText().toString();
+                if(!name1.isEmpty() && !id1.isEmpty() && !grade1.isEmpty()) {
+                    mAuth.createUserWithEmailAndPassword(email1, password1)
+                            .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(SignupActivity.this, "Signup successful.",
+                                                Toast.LENGTH_SHORT).show();
+                                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+                                        ref.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Name").setValue(name1);
+                                        ref.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("ID").setValue(id1);
+                                        ref.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Grade").setValue(grade1);
 
-                mAuth.createUserWithEmailAndPassword(email1, password1)
-                        .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(SignupActivity.this, "Signup successful.",
-                                            Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(getApplicationContext(), HomeScreen.class));
-                                    // Sign in success, update UI with the signed-in user's information
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Toast.makeText(SignupActivity.this, "Signup failed.",
-                                            Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(getApplicationContext(), HomeScreen.class));
+                                        // Sign in success, update UI with the signed-in user's information
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Toast.makeText(SignupActivity.this, "Signup failed.",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
+
+                                    // ...
                                 }
-
-                                // ...
-                            }
-                        });
+                            });
+                }
 
             }
         });

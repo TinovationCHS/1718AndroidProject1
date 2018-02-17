@@ -38,7 +38,6 @@ public class HomeScreen extends AppCompatActivity {
         arrayAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, classes);
         v2.setAdapter(arrayAdapter2);
 
-        //OLD DATABASE CODE
         root.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Classes").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

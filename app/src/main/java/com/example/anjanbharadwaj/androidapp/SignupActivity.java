@@ -1,4 +1,4 @@
-package com.example.anjanbharadwaj.tinovationandroidapp;
+package com.example.anjanbharadwaj.androidapp;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;

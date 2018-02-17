@@ -1,4 +1,4 @@
-package com.example.anjanbharadwaj.tinovationandroidapp;
+package com.example.anjanbharadwaj.androidapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

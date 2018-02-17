@@ -1,9 +1,8 @@
-package com.example.anjanbharadwaj.tinovationandroidapp;
+package com.example.anjanbharadwaj.androidapp;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,9 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Set;
 
 public class HomeScreen extends AppCompatActivity {
 

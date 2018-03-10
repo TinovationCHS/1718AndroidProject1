@@ -4,7 +4,7 @@
     android:orientation="vertical"
 
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.anjanbharadwaj.tinovationandroidapp.TabFragment3">
+    tools:context=".TabFragment3">
 
     <TextView
         android:id="@+id/textView"

@@ -9,19 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.anjanbharadwaj.com.tinovation.androidapp.MainActivity">
+        <activity android:name="com.example.anjanbharadwaj.androidapp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.anjanbharadwaj.com.tinovation.androidapp.SignupActivity" />
-        <activity android:name="com.example.anjanbharadwaj.com.tinovation.androidapp.NoteDetailActivity" />
-        <activity android:name="com.example.anjanbharadwaj.com.tinovation.androidapp.ClassDetailActivity" />
-        <activity android:name="com.example.anjanbharadwaj.com.tinovation.androidapp.ProfileActivity" />
-        <activity android:name="com.example.anjanbharadwaj.com.tinovation.androidapp.CommentsActivity" />
-        <activity android:name="com.example.anjanbharadwaj.com.tinovation.androidapp.AddClassActivity"></activity>
+        <activity android:name="com.example.anjanbharadwaj.androidapp.SignupActivity" />
+        <activity android:name="com.example.anjanbharadwaj.androidapp.HomeScreen" />
+        <activity android:name="com.example.anjanbharadwaj.androidapp.NoteDetailActivity" />
+        <activity android:name="com.example.anjanbharadwaj.androidapp.ClassDetailActivity" />
+        <activity android:name="com.example.anjanbharadwaj.androidapp.ProfileActivity" />
+        <activity android:name="com.example.anjanbharadwaj.androidapp.CommentsActivity" />
+        <activity android:name="com.example.anjanbharadwaj.androidapp.AddClassActivity"></activity>
     </application>
 
 </manifest>

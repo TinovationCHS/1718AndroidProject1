@@ -1,4 +1,4 @@
-package com.example.anjanbharadwaj.tinovationandroidapp;
+package com.example.anjanbharadwaj.androidapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 public class TabFragment2 extends Fragment {
 
-}
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -58,5 +58,6 @@ public class TabFragment2 extends Fragment {
 //        //NEW DATABASE CODE SHOULD BE SORTED INTO CLASSES
 //        //WHEN YOU  TAP ON SOMETHING, IT SHOULD CLEAR THE LISTVIEW AND REPOPULATE IT WITH NEW DATA FROM INSIDE THAT CLASS
 //    }
+    }
 
 }

@@ -1,11 +1,10 @@
-package com.example.anjanbharadwaj.tinovationandroidapp;
+package com.example.anjanbharadwaj.androidapp;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.anjanbharadwaj.tinovationandroidapp.*;
 
 public class TabFragment1 extends Fragment {
 

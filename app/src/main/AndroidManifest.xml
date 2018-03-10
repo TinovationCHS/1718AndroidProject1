@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.anjanbharadwaj.tinovationandroidapp">
+    package="com.example.anjanbharadwaj.androidapp">
 
     <application
         android:allowBackup="true"
@@ -9,20 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.anjanbharadwaj.com.tinovation.androidapp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeScreen" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".NoteDetailActivity" />
-        <activity android:name=".ClassDetailActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".CommentsActivity" />
-        <activity android:name=".AddClassActivity"></activity>
+        <activity android:name="com.example.anjanbharadwaj.com.tinovation.androidapp.SignupActivity" />
+        <activity android:name="com.example.anjanbharadwaj.com.tinovation.androidapp.NoteDetailActivity" />
+        <activity android:name="com.example.anjanbharadwaj.com.tinovation.androidapp.ClassDetailActivity" />
+        <activity android:name="com.example.anjanbharadwaj.com.tinovation.androidapp.ProfileActivity" />
+        <activity android:name="com.example.anjanbharadwaj.com.tinovation.androidapp.CommentsActivity" />
+        <activity android:name="com.example.anjanbharadwaj.com.tinovation.androidapp.AddClassActivity"></activity>
     </application>
 
 </manifest>

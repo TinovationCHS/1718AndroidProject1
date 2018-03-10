@@ -1,4 +1,4 @@
-package com.example.anjanbharadwaj.tinovationandroidapp;
+package com.example.anjanbharadwaj.androidapp;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -57,7 +57,7 @@ public class SignupActivity extends AppCompatActivity {
                                         ref.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("ID").setValue(id1);
                                         ref.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Grade").setValue(grade1);
 
-                                        startActivity(new Intent(getApplicationContext(), HomeScreen.class));
+                                        startActivity(new Intent(getApplicationContext(), ClassDetailActivity.class));
                                         // Sign in success, update UI with the signed-in user's information
                                     } else {
                                         // If sign in fails, display a message to the user.

@@ -1,9 +1,13 @@
 package com.example.anjanbharadwaj.tinovationandroidapp;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -37,42 +41,36 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
         //v = (ListView)findViewById(R.id.listview);
-        startActivity(new Intent(getApplicationContext(), AddClassActivity.class));
-        v2 = (ListView)findViewById(R.id.listview2);
-        arrayAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, classes);
-        v2.setAdapter(arrayAdapter2);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        root.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Classes").addListenerForSingleValueEvent(new ValueEventListener() {
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        final PagerAdapter adapter = new PagerAdapter
+                (getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Iterator i = dataSnapshot.getChildren().iterator();
-                classes.clear();
-                while(i.hasNext()){
-                    String className = (((DataSnapshot) i.next()).getKey());
-                    System.out.println((className));
-                    classes.add(className);
-                }
-                arrayAdapter2.notifyDataSetChanged();
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
 
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onTabReselected(TabLayout.Tab tab) {
 
             }
         });
-
-        v2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parentView, View childView, int position, long id) {
-                String className = v2.getItemAtPosition(position).toString();
-                Intent intent = new Intent(getApplicationContext(), ClassDetailActivity.class);
-                intent.putExtra("ClassName", className);
-                startActivity(intent);
-            }
-        });
-
-
-        //NEW DATABASE CODE SHOULD BE SORTED INTO CLASSES
-        //WHEN YOU  TAP ON SOMETHING, IT SHOULD CLEAR THE LISTVIEW AND REPOPULATE IT WITH NEW DATA FROM INSIDE THAT CLASS
     }
+
 }

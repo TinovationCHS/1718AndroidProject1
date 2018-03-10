@@ -27,7 +27,7 @@ public class AddClassActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String className = text.getText().toString().trim();
-                DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("")
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("");
                 ref.child(className).setValue(System.currentTimeMillis());
             }
         });

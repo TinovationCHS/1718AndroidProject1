@@ -30,6 +30,7 @@ public class TabFragment2 extends Fragment {
     ListView listView;
     ArrayAdapter<String> adapter;
     ArrayList<String> list = new ArrayList<>();
+    RecyclerView recList;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_tab_fragment2, container, false);
@@ -38,7 +39,7 @@ public class TabFragment2 extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
         // initialise our views and set various attributes/layouts/listeners
-        listView = (ListView) view.findViewById(R.id.listview);
+       // listView = (ListView) view.findViewById(R.id.listview);
         adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, list);
         listView.setAdapter(adapter);
 
@@ -48,6 +49,9 @@ public class TabFragment2 extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        LinearLayoutManager llm = new LinearLayoutManager(getContext());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        recList.setLayoutManager(llm);
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         if(ref.child("Classes")!=null) {
@@ -62,6 +66,7 @@ public class TabFragment2 extends Fragment {
                         String className = child.getKey().toString();
                         list.add(className);
                         Log.v("CLASS NAME",className);
+
                     }
 
                     adapter.notifyDataSetChanged();
@@ -76,6 +81,9 @@ public class TabFragment2 extends Fragment {
         else{
             Toast.makeText(getActivity().getApplicationContext(), "You don't have that in the database" , Toast.LENGTH_LONG).show();
         }
+
+
+        //-------------------
 //
 //        startActivity(new Intent(getActivity().getApplicationContext(), AddClassActivity.class));
 //        v2 = (ListView)findViewById(R.id.listview2);

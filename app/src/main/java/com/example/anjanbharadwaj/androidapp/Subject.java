@@ -24,6 +24,7 @@ public class Subject implements Parcelable{
         return classDescription;
     }
 
+
     public void setClassDescription(String classDescription) {
         this.classDescription = classDescription;
     }

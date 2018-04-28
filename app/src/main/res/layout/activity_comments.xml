@@ -8,6 +8,7 @@
     tools:context="com.example.tinovation.androidapp.Comments">
 
 
+
     <co.intentservice.chatui.ChatView
         android:id="@+id/chat_view"
         android:layout_width="match_parent"

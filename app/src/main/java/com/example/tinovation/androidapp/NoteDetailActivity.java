@@ -1,13 +1,14 @@
-package com.example.anjanbharadwaj.androidapp;
+package com.example.tinovation.androidapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ProfileActivity extends AppCompatActivity {
+public class NoteDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_note_detail);
+
     }
 }

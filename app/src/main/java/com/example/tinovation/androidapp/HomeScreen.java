@@ -1,4 +1,4 @@
-package com.example.anjanbharadwaj.androidapp;
+package com.example.tinovation.androidapp;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -8,8 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.anjanbharadwaj.androidapp.PagerAdapter;
-import com.example.anjanbharadwaj.androidapp.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 

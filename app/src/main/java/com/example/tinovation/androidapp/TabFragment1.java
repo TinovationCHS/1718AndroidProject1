@@ -1,4 +1,4 @@
-package com.example.anjanbharadwaj.androidapp;
+package com.example.tinovation.androidapp;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;

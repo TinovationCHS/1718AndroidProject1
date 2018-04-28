@@ -1,4 +1,4 @@
-package com.example.anjanbharadwaj.androidapp;
+package com.example.tinovation.androidapp;
 
 /**
  * Created by anjanbharadwaj on 11/4/17.

@@ -1,9 +1,7 @@
-package com.example.anjanbharadwaj.androidapp;
-import android.content.Intent;
+package com.example.tinovation.androidapp;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -12,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,6 +28,8 @@ public class TabFragment2 extends Fragment {
     ArrayAdapter<String> adapter;
     ArrayList<String> list = new ArrayList<>();
     RecyclerView recList;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_tab_fragment2, container, false);
@@ -38,10 +37,14 @@ public class TabFragment2 extends Fragment {
     }
     public void onViewCreated(View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
-        // initialise our views and set various attributes/layouts/listeners
-       // listView = (ListView) view.findViewById(R.id.listview);
+
         adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, list);
         listView.setAdapter(adapter);
+
+        recList = (RecyclerView) getView().findViewById(R.id.rv);
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recList.setLayoutManager(layoutManager);
 
     }
 
@@ -49,9 +52,8 @@ public class TabFragment2 extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        LinearLayoutManager llm = new LinearLayoutManager(getContext());
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        recList.setLayoutManager(llm);
+
+
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         if(ref.child("Classes")!=null) {

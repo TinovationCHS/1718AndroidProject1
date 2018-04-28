@@ -1,4 +1,4 @@
-package com.example.anjanbharadwaj.androidapp;
+package com.example.tinovation.androidapp;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -41,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email = emailfield.getText().toString();
                 String password = passwordfield.getText().toString();
+
+
+                email = "sreehari@gmail.com";
+                password = "12345678910";
+
+
                 mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -49,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     Toast.makeText(MainActivity.this, "Login successful.",
                                             Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(getApplicationContext(), HomeScreen.class));
+                                    startActivity(new Intent(getApplicationContext(), Comments.class));
                                 } else {
                                     // If sign in fails, display a message to the user.
 

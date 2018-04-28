@@ -22,6 +22,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tinovation.androidapp.NoteDetailActivity;
+import com.example.tinovation.androidapp.R;
+import com.example.tinovation.androidapp.RecyclerViewClickListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

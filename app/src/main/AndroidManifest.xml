@@ -9,20 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.tinovation.androidapp.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.tinovation.androidapp.SignupActivity" />
-        <activity android:name="com.example.tinovation.androidapp.HomeScreen" />
-        <activity android:name="com.example.tinovation.androidapp.NoteDetailActivity" />
-        <activity android:name="com.example.tinovation.androidapp.ClassDetailActivity" />
-        <activity android:name="com.example.tinovation.androidapp.ProfileActivity" />
-        <activity android:name="com.example.tinovation.androidapp.CommentsActivity" />
-        <activity android:name="com.example.tinovation.androidapp.AddClassActivity"></activity>
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".HomeScreen" />
+        <activity android:name=".NoteDetailActivity" />
+        <activity android:name=".ClassDetailActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".AddClassActivity" />
+        <activity android:name=".Comments"></activity>
     </application>
 
 </manifest>

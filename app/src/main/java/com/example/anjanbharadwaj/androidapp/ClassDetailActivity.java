@@ -175,7 +175,7 @@ class NoteArrayAdapter extends ArrayAdapter<NoteItem> {
         TextView classAndPeriod = (TextView) view.findViewById(R.id.classAndPeriod);
         TextView description = (TextView) view.findViewById(R.id.bookDescription);
         ImageView bookImage = (ImageView) view.findViewById(R.id.bookImageView);
-        TextView date = (TextView) view.findViewById(R.id.date);
+        TextView date = (TextView) view.findViewById(R.id.class_name);
 
         date.setText(account.getDate() + "");
         classAndPeriod.setText(account.getClassAndPeriod() + "");
